@@ -6,13 +6,13 @@ import { employeesFetch } from '../actions';
 import ListItem from './ListItem';
 
 class EmployeeList extends Component{
-  componentWillMount(){
+  componentWillMount() {
     this.props.employeesFetch();
 
     this.createDataSource(this.props);
   }
 
-  componenWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     this.createDataSource(nextProps);
   }
 
@@ -31,7 +31,7 @@ class EmployeeList extends Component{
   render(){
     return(
       <ListView
-        enableEmptySections={true}
+        enableEmptySections
         dataSource={this.dataSource}
         renderRow={this.renderRow}
       />
